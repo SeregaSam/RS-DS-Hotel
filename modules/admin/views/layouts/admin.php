@@ -61,38 +61,70 @@ AppAsset::register($this);
     
 </div>
 
- <footer class="footer">
-        <div class="row">
-          
-          <div class="footer__content-col">
-            <h5>Особенности</h5>
-            <ul class="list-unstyled text-small">
-              <li><a class="link-secondary" href="#">Прикольная штука</a></li>
-              <li><a class="link-secondary" href="#">Случайная особенность</a></li>
-              <li><a class="link-secondary" href="#">Особенность команды</a></li>
-              <li><a class="link-secondary" href="#">Материал для разработчиков</a></li>
-            </ul>
-          </div>
-          <div class="footer__content-col">
-            <h5>Ресурсы</h5>
-            <ul class="list-unstyled text-small">
-              <li><a class="link-secondary" href="#">Ресурс</a></li>
-              <li><a class="link-secondary" href="#">Название ресурса</a></li>
-              <li><a class="link-secondary" href="#">Другой ресурс</a></li>
-              <li><a class="link-secondary" href="#">Заключительный ресурс</a></li>
-            </ul>
-          </div>
-          <div class="footer__content-col">
-            <h5>О нас</h5>
-            <ul class="list-unstyled text-small">
-              <li><a class="link-secondary" href="#">Команда</a></li>
-              <li><a class="link-secondary" href="#">Местоположение</a></li>
-              <li><a class="link-secondary" href="#">Конфиденциальность</a></li>
-              <li><a class="link-secondary" href="#">Сроки</a></li>
-            </ul>
-          </div>
-        </div>
-      </footer>
+   <footer class="footer">
+		<div class="l-container">
+			<div class="l-row">
+				<div class="footer__content">
+					<div class="footer__content-col">
+						<h3 class="footer__col-caption">О RS·DC PROJECT</h3>
+						<ul class="footer__list">
+							<li class="footer__list-item">
+								<?= Html::a('О нашем отеле',['hotel/about'],['class' => 'footer__list-link']) ?>
+							</li>
+							<li class="footer__list-item">
+								<?= Html::a('О нашем отеле',['hotel/about'],['class' => 'footer__list-link']) ?>
+							</li>
+							<li class="footer__list-item">
+								<?= Html::a('О нашем отеле',['hotel/about'],['class' => 'footer__list-link']) ?>
+							</li>
+							
+						</ul>
+					</div>
+
+					<div class="footer__content-col">
+						<h3 class="footer__col-caption">Ваш отдых</h3>
+						<ul class="footer__list">
+							<li class="footer__list-item">
+								<?= Html::a('О нашем отеле',['hotel/about'],['class' => 'footer__list-link']) ?>
+							</li>
+							<li class="footer__list-item">
+								<?= Html::a('О нашем отеле',['hotel/about'],['class' => 'footer__list-link']) ?>
+							</li>
+							<li class="footer__list-item">
+								<?= Html::a('О нашем отеле',['hotel/about'],['class' => 'footer__list-link']) ?>
+							</li>
+						</ul>
+					</div>
+
+					<div class="footer__content-col">
+						<h3 class="footer__col-caption">Следите за нами</h3>
+						<ul class="footer__list footer__list_social">
+							<li class="footer__list-item">
+								<a href="https://vk.com/chebols" class="footer__list-link footer__list-link_social"><i class="fab fa-twitter"></i></a>
+							</li>
+							<li class="footer__list-item">
+								<a href="" class="footer__list-link footer__list-link_social"><i class="fab fa-facebook-f"></i></a>
+							</li>
+							<li class="footer__list-item">
+								<a href="" class="footer__list-link footer__list-link_social"><i class="fab fa-vk"></i></a>
+							</li>
+							<li class="footer__list-item">
+								<a href="" class="footer__list-link footer__list-link_social"><i class="fab fa-instagram"></i></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="footer__copyright-container">
+					<div class="footer__copyright">
+						<p class="footer__copyright-text">
+							2021 © Все права защищены <br>RS·DC 41 GROUP  
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
 
 <?php $this->endBody() ?>
 </body>
