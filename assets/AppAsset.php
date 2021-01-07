@@ -24,14 +24,14 @@ class AppAsset extends AssetBundle
         //'css/site.css',
         'https://use.fontawesome.com/releases/v5.2.0/css/all.css',
         'https://fonts.googleapis.com/css?family=Varela+Round',
-        'css/hotel_style.css',
+        'css/hotel.css',
     ];
     public $js = [
 
         'https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js',
 
        //'js/scripts.js', 
-        'https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'
+        
 
     ];
     public $jsOptions = [
