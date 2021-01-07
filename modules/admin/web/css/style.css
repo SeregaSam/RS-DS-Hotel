@@ -1,0 +1,19 @@
+section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.navbar {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.row{
+    margin-left: 2%;
+}
+
+.row-cols-auto{
+
+margin-left: 20%;
+margin-right: 20%;
+    
+}
