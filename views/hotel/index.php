@@ -158,4 +158,8 @@
 				</div>
 			</div>
 		</div>
+<<<<<<< HEAD
 	</main>
+=======
+	</main>
+>>>>>>> maxonV0.1
