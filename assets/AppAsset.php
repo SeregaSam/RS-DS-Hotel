@@ -20,9 +20,16 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/site.css',
+        //'css/site.css',
+        'https://use.fontawesome.com/releases/v5.2.0/css/all.css',
+        'https://fonts.googleapis.com/css?family=Varela+Round',
+        'css/hotel_style.css',
     ];
     public $js = [
+        'https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js',
+    ];
+    public $jsOptions = [
+        'position' => \yii\web\View::POS_END
     ];
     public $depends = [
         'yii\web\YiiAsset',
