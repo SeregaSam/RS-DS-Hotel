@@ -17,7 +17,7 @@ class SiteController extends Controller
     /**
      * {@inheritdoc}
      */
-    public $layout = 'projhotel';
+
     public function behaviors()
     {
         return [

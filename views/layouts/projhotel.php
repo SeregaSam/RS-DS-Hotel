@@ -129,5 +129,4 @@ AppAsset::register($this);
 <<<<<<< HEAD
 <?php $this->endPage() ?>
 =======
-<?php $this->endPage() ?>
 >>>>>>> maxonV0.1
