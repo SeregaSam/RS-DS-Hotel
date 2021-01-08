@@ -27,12 +27,8 @@ class AppAsset extends AssetBundle
         'css/hotel.css',
     ];
     public $js = [
-
-        'https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js',
-
        //'js/scripts.js', 
-        
-
+        'https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'
     ];
     public $jsOptions = [
         'position' => \yii\web\View::POS_END
