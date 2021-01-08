@@ -57,7 +57,7 @@ AppAsset::register($this);
 		</div>
 	</header>
    <?= $content ?>
-   <footer class="footer">
+   <footer class="footer1">
 		<div class="l-container">
 			<div class="l-row">
 				<div class="footer__content">
