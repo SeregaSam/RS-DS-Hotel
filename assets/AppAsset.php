@@ -24,7 +24,7 @@ class AppAsset extends AssetBundle
         //'css/site.css',
         'https://use.fontawesome.com/releases/v5.2.0/css/all.css',
         'https://fonts.googleapis.com/css?family=Varela+Round',
-        'css/hotel_style.css',
+        'css/hotel.css',
     ];
     public $js = [
        //'js/scripts.js', 
