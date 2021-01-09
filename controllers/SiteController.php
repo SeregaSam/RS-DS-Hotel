@@ -10,6 +10,7 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\EntryForm;
+use app\models\ComplaintForm;
 use yii\base\Controller;
 
 class SiteController extends Controller
@@ -74,16 +75,16 @@ class SiteController extends Controller
      */
     public function actionLogin()
     {
-        if (!Yii::$app->user->isGuest) {
-            return $this->goHome();
-        }
+//         if (!Yii::$app->user->isGuest) {
+//             return $this->render('index');
+//         }
 
         $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
-        }
+//         if ($model->load(Yii::$app->request->post()) && $model->login()) {
+//             return $this->goBack();
+//         }
 
-        $model->password = '';
+      $model->password = '';
         return $this->render('login', [
             'model' => $model,
         ]);
@@ -151,6 +152,11 @@ class SiteController extends Controller
     }
     public function actionHello() {
         return $this->render('hello');
+    }
+    
+    public function actionComplaint() {
+        $model = new ComplaintForm();
+        return $this->render('complaint',['model' => $model]);
     }
     
 }
