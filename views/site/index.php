@@ -1,3 +1,6 @@
+<?php  
+use yii\helpers\Html;
+?>
 <main class="main">
 		<div class="slider"></div>
 
@@ -13,7 +16,8 @@
 						<div class="l-products-row__col">
 							<div class="c-number-cart">
 								<figure class="c-number-cart__img-wrapper">
-									<img class="c-number-cart__img" src="img/lux.jpg" alt="">
+									<?= Html::img('@web/img/lux.jpg', ['class' => 'c-number-cart__img'])?>
+									
 								</figure>
 
 								<div class="c-number-cart__content">
@@ -49,7 +53,7 @@
 						<div class="l-products-row__col">
 							<div class="c-number-cart">
 								<figure class="c-number-cart__img-wrapper">
-									<img class="c-number-cart__img" src="img/standart-2.jpg" alt="">
+									<?= Html::img('@web/img/standart-2.jpg', ['class' => 'c-number-cart__img'])?>							
 								</figure>
 
 								<div class="c-number-cart__content">
@@ -85,7 +89,7 @@
 						<div class="l-products-row__col">
 							<div class="c-number-cart">
 								<figure class="c-number-cart__img-wrapper">
-									<img class="c-number-cart__img" src="img/standart-3.jpg" alt="">
+										<?= Html::img('@web/img/standart-3.jpg', ['class' => 'c-number-cart__img'])?>		
 								</figure>
 
 								<div class="c-number-cart__content">
@@ -121,7 +125,7 @@
 						<div class="l-products-row__col">
 							<div class="c-number-cart">
 								<figure class="c-number-cart__img-wrapper">
-									<img class="c-number-cart__img" src="img/standart-1.jpg" alt="">
+										<?= Html::img('@web/img/standart-1.jpg', ['class' => 'c-number-cart__img'])?>		
 								</figure>
 
 								<div class="c-number-cart__content">

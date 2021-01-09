@@ -18,12 +18,16 @@ AppAsset::register($this);
 </head>
 <body>
     <?php $this->beginBody() ?>
+    <a href="#" class="c-burger">
+		<i class="c-burger__bar"></i>
+	</a>
     <header class="c-header">
 		<div class="l-container">
 			<div class="l-row">
 				<div class="c-header__inner">
 					<div class="c-logo c-header__logo">
-						<a href="index.html" class="c-logo__link">
+						<a href="view/site/index.php" class="c-logo__link">
+						
 							<?= Html::img($phptos->baseUrl . "/img/logo-mobile.svg", ['class' => 'c-logo__img'])?>
 							
 						</a>
@@ -54,7 +58,7 @@ AppAsset::register($this);
 					</div>
 				</div>	
 			</div>
-		</div>
+		</div>		
 	</header>
    <?= $content ?>
    <footer class="footer">

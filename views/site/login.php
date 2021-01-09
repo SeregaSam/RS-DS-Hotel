@@ -2,7 +2,7 @@
 
 /* @var $this yii\web\View */
 /* @var $form yii\bootstrap\ActiveForm */
-/* @var $model app\models\LoginForm */
+namespace  app\models\LoginForm; 
 
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
@@ -10,46 +10,29 @@ use yii\bootstrap\ActiveForm;
 $this->title = 'Login';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-login">
-    <h1><?= Html::encode($this->title) ?></h1>
-
-   
-
-        <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
-
-        <?= $form->field($model, 'password')->passwordInput() ?>
-
-        <?= $form->field($model, 'rememberMe')->checkbox([
-            'template' => "<div class=\"col-lg-offset-1 col-lg-3\">{input} {label}</div>\n<div class=\"col-lg-8\">{error}</div>",
-        ]) ?>
-
-        <div class="form-group">
-            <div class="col-lg-offset-1 col-lg-11">
-                <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
-            </div>
-        </div>
-
+ 	
 <main class="main_form-styles">
 		<div class="main__inner">
 			<div class="c-form-block main__form-block">
-			<?php $form = ActiveForm::begin()?>
-				<form class="c-form" method="POST">
+				<?php $form = ActiveForm::begin(['id' => 'login-form','errorCssClass'=>'c-form__validError','options'=>['class'=>'c-form']])?>
+				
 					<div class="c-from__group">
-						 <?= $form->field($model, 'username')->textInput(['autofocus' => true],['class' => 'c-form__input']) ?>
-						
+						<?=$form->field($model,'username')->textInput(['class'=>'c-form__input'])->input('username', ['placeholder' => "Ваше Имя", 'class'=>'c-form__input'])->label(false);?>						
 					</div>
-
+					
+					
 					<div class="c-from__group">
-						<?= $form->field($model, 'password')->passwordInput() ?>
-						
+						<?= $form->field($model,'password')->passwordInput(['class'=>'c-form__input'])->input('password', ['placeholder' => "пароль", 'class'=>'c-form__input'])->label(false);?>
 					</div>
-
+					<div class="c-from__group">
+						<?= $form->field($model,'rememberMe')->checkbox()->label('Запомнить меня',['class'=>'c-form__label']);?>
+					</div>
+					
 					<div class="c-from__group c-from__group_btn-block">
-						<input type="submit" class="btn c-from__btn" name="submit" value="Войти">
+						<?= Html::submitButton('Войти',['class'=>'btn c-from__btn'])?>
 					</div>	
-				</form>
-				 <?php ActiveForm::end(); ?>
+				
+				<?php $form = ActiveForm::end()?>
 			</div>	
 		</div>
-	</main>   
- 	
+	</main>
