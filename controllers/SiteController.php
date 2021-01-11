@@ -69,7 +69,8 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
-    public function actionBookRoom() {
+    public function actionBookRoom() 
+    {
         $model = new BookRoomForm;
 
         return $this->render('book-room', ['model' => $model]);
