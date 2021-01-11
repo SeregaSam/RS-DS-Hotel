@@ -1,5 +1,5 @@
 <?php
-namespace app\modules\admin\models;
+namespace app\models;
 
 use yii\db\ActiveRecord;
 
@@ -10,7 +10,7 @@ class book extends  ActiveRecord
          }
          public function getClient()
          {
-             return $this->hasOne(room::className(), ['id' => 'IdClient']);
+             return $this->hasOne(client::className(), ['IdClient' => 'IdMainClient']);
          }
          public function rules()
          {
@@ -23,7 +23,7 @@ class book extends  ActiveRecord
                  [['Room'], 'integer'],
                  [['GroupSize'], 'integer'],
                  [['DepartDate'], 'date', 'format' => 'php:Y-m-d'],
-               
+                 
              ];
          }
          
@@ -34,9 +34,9 @@ class book extends  ActiveRecord
          {
              return [
                  'IdBookRoom' => 'ID',
-                 'ArrivalDate' => 'Arrival',
-                 'DepartDate' => 'Depart',
-                 'StatusCode' => 'Status',
+                 'ArrivalDate' => 'Прибывает',
+                 'DepartDate' => 'Уезжает',
+                 'StatusCode' => 'Статус',
                  'IdMainClient' => 'IdClient',
                  'Room' => 'Взрослых',// тип комнаты
                  'GroupSize' => 'Размер группы',// тип комнаты
