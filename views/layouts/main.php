@@ -10,9 +10,9 @@ AppAsset::register($this);
 <html lang="<?= Yii::$app->language ?>">
 <head>
     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1">     
+    <meta name="viewport" content="width=device-width, initial-scale=1">     
     <title><?= Html::encode($this->title) ?></title>
-  
+  	<?php $this->registerCsrfMetaTags() ?>
     <?php $this->head() ?>
 </head>
 <body>
