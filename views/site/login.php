@@ -21,9 +21,9 @@ $this->title = 'Войти';
 					]
 				])?>
 					
-				<?=$form->field($model,'username')->textInput(['placeholder' => 'имя', 'class'=>'c-form__input']);?>						
+				<?=$form->field($model,'username')->textInput(['placeholder' => 'Имя', 'class'=>'c-form__input']);?>						
 						
-				<?= $form->field($model,'password')->passwordInput(['placeholder' => 'пароль', 'class'=>'c-form__input']);?>
+				<?= $form->field($model,'password')->passwordInput(['placeholder' => 'Пароль', 'class'=>'c-form__input']);?>
 
 				<?= $form->field($model,'rememberMe')->checkbox()->label('Запомнить меня',['class'=>'c-form__label']);?>
 					
