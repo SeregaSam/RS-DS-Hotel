@@ -26,11 +26,7 @@ AppAsset::register($this);
 			<div class="l-row">
 				<div class="c-header__inner">
 					<div class="c-logo c-header__logo">
-						<a href="view/site/index.php" class="c-logo__link">
-						
-							<?= Html::img($phptos->baseUrl . "/img/logo-mobile.svg", ['class' => 'c-logo__img'])?>
-							
-						</a>
+						<?= Html::a(Html::img($phptos->baseUrl . "/img/logo-mobile.svg", ['class' => 'c-logo__img']), ['site/index']) ?>
 					</div>
 					<div class="c-header__nav-wrapper">
 						<nav class="c-header__navigation c-navigation">
@@ -53,8 +49,7 @@ AppAsset::register($this);
 						</nav>
 						 <?php  if( isset($this->blocks['block1'])):?>
             			<?php echo $this->blocks['block1']?>
-            			<?php endif;?>
-            			
+            			<?php endif;?>	
 					</div>
 				</div>	
 			</div>
