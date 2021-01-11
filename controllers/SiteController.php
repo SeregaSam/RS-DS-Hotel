@@ -7,6 +7,7 @@ use yii\filters\AccessControl;
 
 use yii\web\Response;
 use yii\filters\VerbFilter;
+use app\models\BookRoomForm;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\EntryForm;
@@ -67,6 +68,12 @@ class SiteController extends Controller
     {
         return $this->render('index');
     }
+
+    public function actionBookRoom() {
+        $model = new BookRoomForm;
+
+        return $this->render('book-room', ['model' => $model]);
+    } 
 
     /**
      * Login action.
