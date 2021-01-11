@@ -21,10 +21,9 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        //'css/site.css',
         'https://use.fontawesome.com/releases/v5.2.0/css/all.css',
         'https://fonts.googleapis.com/css?family=Varela+Round',
-        'css/hotel.css',
+        'css/site.css',
     ];
     public $js = [
 
@@ -35,10 +34,9 @@ class AppAsset extends AssetBundle
 
     ];
     public $jsOptions = [
-        'position' => \yii\web\View::POS_END
+        
     ];
     public $depends = [
-        'yii\web\YiiAsset',
-        'yii\bootstrap\BootstrapPluginAsset'
+        
     ];
 }
