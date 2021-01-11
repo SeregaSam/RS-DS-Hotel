@@ -8,10 +8,19 @@ use yii\base\Model;
 class BookRoomForm extends Model {
 	public $username;
 	public $surname;
+	public $room_category;
 	public $nutrition;
 	public $internet;
 	public $telephone;
 	public $minibar;
+
+	public function attributeLabels() {
+		return [
+			'internet' => 'Интернет',
+			'telephone' => 'Телефон',
+			'minibar' => 'Минибар'
+		];
+	}
 }
 
 ?>
