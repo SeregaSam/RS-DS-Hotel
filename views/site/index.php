@@ -1,5 +1,7 @@
 <?php  
 use yii\helpers\Html;
+
+$this->title = 'RS-DC Hotel';
 ?>
 <main class="main">
 		<div class="slider"></div>
