@@ -249,7 +249,7 @@ p {
 
 }
 
-.c-from__group {
+.c-form__group {
 	margin-bottom: 15px;
 }
 
@@ -274,11 +274,11 @@ p {
 	border-color: red;
 }
 
-.c-from__btn {
+.c-form__btn {
 	font-size: 18px;
 }
 
-.c-from__group_btn-block {
+.c-form__group_btn-block {
 	margin-top: 30px;
 	margin-bottom: 0px;
 	text-align: center;
