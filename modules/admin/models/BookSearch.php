@@ -3,9 +3,9 @@ namespace app\modules\admin\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\book;
+use app\models\Book;
 
-class bookSearch extends book
+class BookSearch extends Book
 {
     
     
@@ -39,7 +39,7 @@ class bookSearch extends book
      */
     public function search($params)
     {
-        $query = book::find()->with('client');
+        $query = Book::find()->with('client');
         
         // add conditions that should always apply here
         

@@ -3,7 +3,7 @@ namespace app\models;
 
 use yii\db\ActiveRecord;
 
-class client extends  ActiveRecord
+class Client extends  ActiveRecord
 {
     public static function tableName() {// если отличается название таблицы
         return 'client_hotel' ;

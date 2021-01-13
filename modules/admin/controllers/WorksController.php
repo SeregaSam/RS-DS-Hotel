@@ -3,12 +3,12 @@
 namespace app\modules\admin\controllers;
 
 use yii\web\Controller;
-use app\modules\admin\models\room;
-use app\modules\admin\models\bookSearch;
+use app\models\Room;
+use app\modules\admin\models\BookSearch;
 use Yii;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use app\modules\admin\models\book;
+use app\models\Book;
 
 /**
  * Default controller for the `admin` module
@@ -29,19 +29,19 @@ class WorksController extends Controller
     {
         
         $sql2 = 'SELECT room.IdRoom, room_category.Name,room_category.GuestNumber,room_category.Cost, room_category.Info From room, room_category WHERE room.IdCategory = room_category.IdCategory Order By room.IdRoom';
-        $Hotrooms = room::findBySql($sql2)->asArray()->all();
+        $Hotrooms = Room::findBySql($sql2)->asArray()->all();
         return $this->render('rooms',compact('Hotrooms'));
     }
     public function actionBooks()
     {
         
         $sql2 = 'SELECT book_room.IdBookRoom, client_hotel.Surname, client_hotel.Name, client_hotel.Partonymic, book_room.ArrivalDate, book_room.DepartDate, book_room.StatusCode, book_room.GroupSize From book_room LEFT JOIN client_hotel ON book_room.IdMainClient =  client_hotel.IdClient Order By book_room.IdBookRoom';
-        $Hotbooks = room::findBySql($sql2)->asArray()->all();
+        $Hotbooks = Book::findBySql($sql2)->asArray()->all();
         return $this->render('books',compact('Hotbooks'));
     }
     public function actionBook()
     {
-        $searchModel = new bookSearch();
+        $searchModel = new BookSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
         
         return $this->render('booktable', [
@@ -51,7 +51,7 @@ class WorksController extends Controller
     }
     public function actionCreate()
     {
-        $model = new book();
+        $model = new Book();
         
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->IdBookRoom]);
@@ -87,7 +87,7 @@ class WorksController extends Controller
     }
     protected function findModel($id)
     {
-        if (($model = book::findOne($id)) !== null) {
+        if (($model = Book::findOne($id)) !== null) {
             return $model;
         }
         

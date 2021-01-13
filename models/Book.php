@@ -2,15 +2,16 @@
 namespace app\models;
 
 use yii\db\ActiveRecord;
+use app\models\Client;
 
-class book extends  ActiveRecord
+class Book extends  ActiveRecord
 {
        public static function tableName() {// если отличается название таблицы
             return 'book_room' ;
          }
          public function getClient()
          {
-             return $this->hasOne(client::className(), ['IdClient' => 'IdMainClient']);
+             return $this->hasOne(Client::className(), ['IdClient' => 'IdMainClient']);
          }
          public function rules()
          {
