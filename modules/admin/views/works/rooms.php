@@ -1,16 +1,22 @@
-<table border="1">
-  <tr>
-  <caption>Таблица размеров обуви</caption>
-  
-    <th>Номер комнаты</th>
-    <th>Категория</th>
-    <th>Посетители</th>
-    <th>Цена</th>
-  </tr>
-  <?php  foreach ($Hotrooms as $NRoom){?>
-      <tr><td><?php echo $NRoom['IdRoom'] ?></td><td><?php echo $NRoom['Name'] ?><td><?php echo $NRoom['GuestNumber'] ?>
-      <td><?php echo $NRoom['Cost'] ?></td></tr>
-  
-  <?php }?>
-  
-</table>
+<?php
+  $this->title = 'Номера';
+?>
+
+<div class="table-responsive">
+  <table class="table table-sm">
+    <thead>
+      <th>Номер комнаты</th>
+      <th>Тип номера</th>
+      <th>Цена</th>
+    </thead>
+    <tbody>
+      <?php  foreach ($rooms as $room): ?>
+        <tr>
+          <td><?= $room['RoomNumber'] ?></td>
+          <td><?= $room['Name'] ?></td>
+          <td><?= $room['Cost'] ?></td>
+        </tr> 
+      <?php endforeach; ?>
+    </tbody>
+  </table>  
+</div>
