@@ -7,12 +7,12 @@ $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
-    'language'=>'ru',
+    'language' => 'ru',
     //'layout'=>'base',
     'modules' => [
         'admin' => [
             'class' => 'app\modules\admin\Module',
-            'layout'=>'admin'
+            'layout' => 'admin'
         ],
     ],
     'aliases' => [
@@ -21,6 +21,16 @@ $config = [
         '@admin' => '@app/modules/admin',
     ],
     'components' => [
+        'assetManager' => [
+            'bundles' => [
+                'yii\bootstrap\BootstrapAsset' => [
+                    'sourcePath' => null,
+                    'css' => [
+                        'https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css',
+                    ]
+                ]
+            ]
+        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'rDIqNQlAaxaXKToV655cK4g9VkKfJb4r',

@@ -6,7 +6,7 @@ AppAsset::register($this);
 ?>
 <?php $phptos = $this->getAssetManager()->getBundle('app\assets\AppAsset'); ?>
 <?php $this->beginPage()?>
-<! doctype html>
+<!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
 <head>
     <meta charset="UTF-8">
