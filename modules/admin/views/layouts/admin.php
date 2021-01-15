@@ -44,13 +44,13 @@ AdminAsset::register($this);
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link"><i class="fa fa-home" aria-hidden="true"></i> Номера</a>
+                            <?= Html::a('<i class="fa fa-home" aria-hidden="true"></i> Номера',['works/rooms'],['class' => 'nav-link']) ?>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link"><i class="fa fa-file" aria-hidden="true"></i> Бронь</a>
+                            <?= Html::a('<i class="fa fa-file" aria-hidden="true"></i> Брони',['works/books'],['class' => 'nav-link']) ?>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link"><i class="fa fa-user" aria-hidden="true"></i> Клиенты</a>
+                            <?= Html::a('<i class="fa fa-user" aria-hidden="true"></i> Клиенты',['works/books'],['class' => 'nav-link']) ?>
                         </li>
                     </ul>
                 </div>
