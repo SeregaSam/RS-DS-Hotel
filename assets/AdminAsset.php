@@ -22,8 +22,9 @@ class AdminAsset extends AssetBundle
         'css/style.css',
     ];
     public $js = [
-
-        'https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js',
+        'https://code.jquery.com/jquery-3.5.1.slim.min.js',
+ //       'https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js',
+  //      'https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js',
 
        //'js/scripts.js', 
         
@@ -33,7 +34,8 @@ class AdminAsset extends AssetBundle
         
     ];
     public $depends = [
-//    'yii\web\YiiAsset',
-      'yii\bootstrap\BootstrapAsset',
+ //       'yii\web\YiiAsset',
+        'yii\web\JqueryAsset',
+        'yii\bootstrap\BootstrapAsset',
     ];
 }
