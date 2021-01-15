@@ -1,4 +1,6 @@
 <?php
+  use yii\widgets\LinkPager;
+
   $this->title = 'Номера';
 ?>
 
@@ -19,4 +21,8 @@
       <?php endforeach; ?>
     </tbody>
   </table>  
+</div>
+
+<div class="pagination">
+  <?= LinkPager::widget(['pagination' => $pagination]) ?>
 </div>

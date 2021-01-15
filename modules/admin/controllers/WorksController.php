@@ -9,6 +9,7 @@ use Yii;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use app\models\Book;
+use yii\data\Pagination;
 
 /**
  * Default controller for the `admin` module
@@ -26,9 +27,16 @@ class WorksController extends Controller
         
  /*       $sql2 = 'SELECT room.IdRoom, room_category.Name,room_category.GuestNumber,room_category.Cost, room_category.Info From room, room_category WHERE room.IdCategory = room_category.IdCategory Order By room.IdRoom'; */
    //     $Hotrooms = Room::findBySql($sql2)->asArray()->all();
-        $rooms = Room::find()->asArray()->all();
+        $rooms = Room::find();
 
-        return $this->render('rooms', compact('rooms'));
+        $pagination = new Pagination([
+            'defaultPageSize' => '15',
+            'totalCount' => $rooms->count(),
+        ]);
+
+        $rooms = Room::find()->offset( $pagination->offset )->limit( $pagination->limit )->asArray()->all(); 
+
+        return $this->render('rooms', compact('rooms', 'pagination'));
     }
     public function actionBooks()
     {
