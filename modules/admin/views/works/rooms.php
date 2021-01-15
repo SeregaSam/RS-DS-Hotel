@@ -23,6 +23,6 @@
   </table>  
 </div>
 
-<div class="pagination">
+<div class="pagination-wrapper">
   <?= LinkPager::widget(['pagination' => $pagination]) ?>
 </div>
