@@ -34,7 +34,7 @@ $this->title = 'RS-DC Hotel';
 										<p class="c-number-cart__description"><?=Html::encode($category['description'])?></p>
 
 										<div class="c-number-cart__btn-wrapper">
-											<?= Html::a('Забронировать', ['site/book-room', 'selectedCategoryId' => $category['id']], ['class' => 'btn']) ?>
+											<?= Html::a('Забронировать', ['site/book-room', 'id' => $category['id']], ['class' => 'btn']) ?>
 										</div>
 									</div>
 
