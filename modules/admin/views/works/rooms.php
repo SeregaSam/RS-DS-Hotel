@@ -24,5 +24,5 @@
 </div>
 
 <div class="pagination-wrapper">
-  <?= LinkPager::widget(['pagination' => $pagination]) ?>
+  <?= LinkPager::widget(['pagination' => $paginationRooms]) ?>
 </div>

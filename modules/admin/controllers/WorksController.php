@@ -29,14 +29,14 @@ class WorksController extends Controller
    //     $Hotrooms = Room::findBySql($sql2)->asArray()->all();
         $rooms = Room::find();
 
-        $pagination = new Pagination([
+        $paginationRooms = new Pagination([
             'defaultPageSize' => '15',
             'totalCount' => $rooms->count(),
         ]);
 
-        $rooms = Room::find()->offset( $pagination->offset )->limit( $pagination->limit )->asArray()->all(); 
+        $rooms = Room::find()->offset( $paginationRooms->offset )->limit( $paginationRooms->limit )->asArray()->all(); 
 
-        return $this->render('rooms', compact('rooms', 'pagination'));
+        return $this->render('rooms', compact('rooms', 'paginationRooms'));
     }
     public function actionBooks()
     {
