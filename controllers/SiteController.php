@@ -13,7 +13,7 @@ use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\EntryForm;
 use app\models\ComplaintForm;
-use yii\base\Controller;
+use yii\web\Controller;
 
 class SiteController extends Controller
 {
@@ -72,17 +72,12 @@ class SiteController extends Controller
         return $this->render('index', compact('categories'));
     }
 
-    public function actionBookRoom() 
-    {
-        $request = Yii::$app->request;
-
-        $selectedCategoryId = $request->get('selectedCategoryId');
+    public function actionBookRoom($id=null) 
+    {  
         $bookRoomForm = new BookRoomForm;
-
-        if(!is_null($selectedCategoryId)) {
-          $bookRoomForm->roomCategoryId = $selectedCategoryId;
-        }
-
+        
+        is_null($id) ? $bookRoomForm->roomCategoryId = 1 : $bookRoomForm->roomCategoryId = $id;
+        
         return $this->render('book-room', ['bookRoomForm' => $bookRoomForm]);
     } 
 
@@ -173,9 +168,4 @@ class SiteController extends Controller
         $model = new ComplaintForm();
         return $this->render('complaint',['model' => $model]);
     }
-
-    public function actionAsd($test = null) {
-      return $test;
-    }
-    
 }
