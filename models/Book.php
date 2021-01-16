@@ -4,7 +4,7 @@ namespace app\models;
 use yii\db\ActiveRecord;
 use app\models\Client;
 
-class Book extends  ActiveRecord
+class Book extends ActiveRecord
 {
        public static function tableName() {// если отличается название таблицы
             return 'book_room' ;
