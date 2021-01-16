@@ -19,7 +19,7 @@ class WorksController extends Controller
      
     public function actionIndex()
     {
-       return $this->actionRooms();
+        return $this->actionRooms();
     }
     
     public function actionRooms()
@@ -31,11 +31,11 @@ class WorksController extends Controller
             'totalCount' => $rooms->count(),
         ]);
 
-        $rooms = Room::find()->select(['roomNumber','title','price', 'itsFree'])->joinWith('category')->offset( $paginationRooms->offset )->limit( $paginationRooms->limit )->asArray()->all();
+        $rooms = Room::find()->select(['roomNumber','title','price','itsFree'])->joinWith('category')->offset( $paginationRooms->offset )->limit( $paginationRooms->limit )->asArray()->all();
  
         return $this->render('rooms', compact('rooms', 'paginationRooms'));
     }
-    
+
     public function actionBooks()
     {
         
