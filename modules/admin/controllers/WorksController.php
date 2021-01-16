@@ -24,9 +24,6 @@ class WorksController extends Controller
     
     public function actionRooms()
     {
-        
- /*       $sql2 = 'SELECT room.IdRoom, room_category.Name,room_category.GuestNumber,room_category.Cost, room_category.Info From room, room_category WHERE room.IdCategory = room_category.IdCategory Order By room.IdRoom'; */
-   //     $Hotrooms = Room::findBySql($sql2)->asArray()->all();
         $rooms = Room::find();
 
         $paginationRooms = new Pagination([
@@ -34,10 +31,11 @@ class WorksController extends Controller
             'totalCount' => $rooms->count(),
         ]);
 
-        $rooms = Room::find()->offset( $paginationRooms->offset )->limit( $paginationRooms->limit )->asArray()->all(); 
-
+        $rooms = Room::find()->select(['roomNumber','title','price', 'itsFree'])->joinWith('category')->offset( $paginationRooms->offset )->limit( $paginationRooms->limit )->asArray()->all();
+ 
         return $this->render('rooms', compact('rooms', 'paginationRooms'));
     }
+    
     public function actionBooks()
     {
         

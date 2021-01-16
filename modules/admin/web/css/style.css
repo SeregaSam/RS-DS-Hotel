@@ -53,5 +53,13 @@
   color: #fff;
   text-decoration: none;
   cursor: pointer;
-} 
+}
+
+.room-free {
+  color: #4CB648;
+}
+
+.room-book {
+  color: #fccf03;
+}
 
