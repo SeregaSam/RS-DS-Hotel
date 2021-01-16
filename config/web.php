@@ -8,7 +8,6 @@ $config = [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'language' => 'ru',
-    //'layout'=>'base',
     'modules' => [
         'admin' => [
             'class' => 'app\modules\admin\Module',
