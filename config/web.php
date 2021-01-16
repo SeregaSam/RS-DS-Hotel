@@ -32,12 +32,12 @@ $config = [
                     ]
                 ],
 
-                'yii\web\JqueryAsset' => [
+  /*              'yii\web\JqueryAsset' => [
                     'sourcePath' => null,   
                     'js' => [
                         'https://code.jquery.com/jquery-3.5.1.slim.min.js',
                     ]
-                ],
+                ], */
             ]
         ],
         'request' => [

@@ -25,7 +25,7 @@ $this->title = 'Забронировать';
 
 			<h2 class="c-form__caption">Тип номера</h2>
 
-			<?=$form->field($bookRoomForm,'room_category')->dropDownList(['lux' => 'люкс', 'single' => 'одноместный', 'double_room' => 'двухместный', 'triple_room' => 'трехместный'], ['class' => 'c-form__input']);?>
+			<?=$form->field($bookRoomForm,'roomCategoryId')->dropDownList(['1' => 'одноместный', '2' => 'двухместный', '3' => 'трехместный', '4' => 'люкс'], ['class' => 'c-form__input']);?>
 
 			<h2 class="c-form__caption">Питание</h2>
 

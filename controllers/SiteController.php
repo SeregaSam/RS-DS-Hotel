@@ -8,6 +8,7 @@ use yii\filters\AccessControl;
 use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\BookRoomForm;
+use app\models\Category;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\EntryForm;
@@ -66,12 +67,21 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $categories = Category::find()->asArray()->all();
+
+        return $this->render('index', compact('categories'));
     }
 
     public function actionBookRoom() 
     {
+        $request = Yii::$app->request;
+
+        $selectedCategoryId = $request->get('selectedCategoryId');
         $bookRoomForm = new BookRoomForm;
+
+        if(!is_null($selectedCategoryId)) {
+          $bookRoomForm->roomCategoryId = $selectedCategoryId;
+        }
 
         return $this->render('book-room', ['bookRoomForm' => $bookRoomForm]);
     } 
@@ -162,6 +172,10 @@ class SiteController extends Controller
     public function actionComplaint() {
         $model = new ComplaintForm();
         return $this->render('complaint',['model' => $model]);
+    }
+
+    public function actionAsd($test = null) {
+      return $test;
     }
     
 }

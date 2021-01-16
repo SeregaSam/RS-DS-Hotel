@@ -15,152 +15,44 @@ $this->title = 'RS-DC Hotel';
 					</div>
 
 					<div class="l-products-row">
-						<div class="l-products-row__col">
-							<div class="c-number-cart">
-								<figure class="c-number-cart__img-wrapper">
-									<?= Html::img('@web/img/lux.jpg', ['class' => 'c-number-cart__img'])?>
-									
-								</figure>
+						<?php foreach($categories as $category): ?>
+							<div class="l-products-row__col">
+								<div class="c-number-cart">
+									<figure class="c-number-cart__img-wrapper">
+										<?= Html::img('@web/img/'.Html::encode($category['imgAlias']).'.jpg', ['class' => 'c-number-cart__img'])?>	
+									</figure>
 
-								<div class="c-number-cart__content">
-									<h3 class="c-number-cart__caption">
-										<a href="" class="c-number-cart__caption-link">Номер люкс</a>
-									</h3>
+									<div class="c-number-cart__content">
+										<h3 class="c-number-cart__caption">
+											<a href="" class="c-number-cart__caption-link">Номер <?=Html::encode($category['title'])?></a>
+										</h3>
 
-									<div class="c-number-cart__price-status">
-										<span class="c-number-cart__price-value">&#8381;2000</span>
+										<div class="c-number-cart__price-status">
+											<span class="c-number-cart__price-value">&#8381;<?=Html::encode($category['price'])?> за ночь</span>
+										</div>
+
+										<p class="c-number-cart__description"><?=Html::encode($category['description'])?></p>
+
+										<div class="c-number-cart__btn-wrapper">
+											<?= Html::a('Забронировать', ['site/book-room', 'selectedCategoryId' => $category['id']], ['class' => 'btn']) ?>
+										</div>
 									</div>
-
-									<p class="c-number-cart__description">Мы рады предложить удобные и уютные двухкомнатные номера категории "люкс" на 12, 11 и 5 этажах. При неизменной роскоши каждого из люксов, каждый из них обладает неподражаемым дизайном.</p>
-
-									<div class="c-number-cart__btn-wrapper">
-										<a href="" class="btn">Забронировать</a>
-									</div>
-								</div>
 
 								<p class="c-number-cart__footer">
 									<span class="c-number-cart__specification">
-										<strong class="c-number-cart__specification-value">40</strong> м2
+										<strong class="c-number-cart__specification-value"><?=Html::encode($category['square'])?></strong> м2
 									</span>
 									<span class="c-number-cart__specification">
-										<strong class="c-number-cart__specification-value">3</strong> кровати
+										<strong class="c-number-cart__specification-value"><?=Html::encode($category['beds'])?></strong> кровати
 									</span>
 									<span class="c-number-cart__specification">
-										<strong class="c-number-cart__specification-value">2</strong> ванны
+										<strong class="c-number-cart__specification-value"><?=Html::encode($category['baths'])?></strong> ванны
 									</span>
 								</p>
-							</div>
-						</div>
-
-						<div class="l-products-row__col">
-							<div class="c-number-cart">
-								<figure class="c-number-cart__img-wrapper">
-									<?= Html::img('@web/img/standart-2.jpg', ['class' => 'c-number-cart__img'])?>							
-								</figure>
-
-								<div class="c-number-cart__content">
-									<h3 class="c-number-cart__caption">
-										<a href="" class="c-number-cart__caption-link">Двухместный</a>
-									</h3>
-
-									<div class="c-number-cart__price-status">
-										<span class="c-number-cart__price-value">&#8381;1000</span>
-									</div>
-
-									<p class="c-number-cart__description">Мы рады предложить удобный и уютный двухместный номер. Хороший вариант для семейного отдыха и любителей комфорта</p>
-
-									<div class="c-number-cart__btn-wrapper">
-										<a href="" class="btn">Забронировать</a>
-									</div>
 								</div>
-
-								<p class="c-number-cart__footer">
-									<span class="c-number-cart__specification">
-										<strong class="c-number-cart__specification-value">20</strong> м2
-									</span>
-									<span class="c-number-cart__specification">
-										<strong class="c-number-cart__specification-value">1</strong> кровать
-									</span>
-									<span class="c-number-cart__specification">
-										<strong class="c-number-cart__specification-value">1</strong> ванна
-									</span>
-								</p>
-							</div>
-						</div>
-
-						<div class="l-products-row__col">
-							<div class="c-number-cart">
-								<figure class="c-number-cart__img-wrapper">
-										<?= Html::img('@web/img/standart-3.jpg', ['class' => 'c-number-cart__img'])?>		
-								</figure>
-
-								<div class="c-number-cart__content">
-									<h3 class="c-number-cart__caption">
-										<a href="" class="c-number-cart__caption-link">Трехместный</a>
-									</h3>
-
-									<div class="c-number-cart__price-status">
-										<span class="c-number-cart__price-value">&#8381;1500</span>
-									</div>
-
-									<p class="c-number-cart__description">Мы рады предложить удобный и уютный трехместный номер. Хороший вариант для семейного отдыха и любителей комфорта</p>
-
-									<div class="c-number-cart__btn-wrapper">
-										<a href="" class="btn">Забронировать</a>
-									</div>
-								</div>
-
-								<p class="c-number-cart__footer">
-									<span class="c-number-cart__specification">
-										<strong class="c-number-cart__specification-value">25</strong> м2
-									</span>
-									<span class="c-number-cart__specification">
-										<strong class="c-number-cart__specification-value">2</strong> кровати
-									</span>
-									<span class="c-number-cart__specification">
-										<strong class="c-number-cart__specification-value">1</strong> ванна
-									</span>
-								</p>
-							</div>
-						</div>
-
-						<div class="l-products-row__col">
-							<div class="c-number-cart">
-								<figure class="c-number-cart__img-wrapper">
-										<?= Html::img('@web/img/standart-1.jpg', ['class' => 'c-number-cart__img'])?>		
-								</figure>
-
-								<div class="c-number-cart__content">
-									<h3 class="c-number-cart__caption">
-										<a href="" class="c-number-cart__caption-link">Одноместный</a>
-									</h3>
-
-									<div class="c-number-cart__price-status">
-										<span class="c-number-cart__price-value">&#8381;900</span>
-									</div>
-
-									<p class="c-number-cart__description">Мы рады предложить удобный и уютный одноместный номер. Хороший вариант для семейного отдыха и любителей комфорта</p>
-
-									<div class="c-number-cart__btn-wrapper">
-										<a href="" class="btn">Забронировать</a>
-									</div>
-								</div>
-
-								<p class="c-number-cart__footer">
-									<span class="c-number-cart__specification">
-										<strong class="c-number-cart__specification-value">15</strong> м2
-									</span>
-									<span class="c-number-cart__specification">
-										<strong class="c-number-cart__specification-value">1</strong> кровать
-									</span>
-									<span class="c-number-cart__specification">
-										<strong class="c-number-cart__specification-value">1</strong> ванна
-									</span>
-								</p>
-							</div>
-						</div>
-
-					</div>
+							</div>	
+						<?php endforeach; ?>
+					</div>	
 				</div>
 			</div>
 		</div>

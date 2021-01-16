@@ -8,7 +8,7 @@ use yii\base\Model;
 class BookRoomForm extends Model {
 	public $username;
 	public $surname;
-	public $room_category;
+	public $roomCategoryId;
 	public $nutrition;
 	public $internet;
 	public $telephone;
