@@ -6,7 +6,7 @@ use yii\db\ActiveRecord;
 class Client extends  ActiveRecord
 {
     public static function tableName() {// если отличается название таблицы
-        return 'client_hotel' ;
+        
     }
     public function getBook()
     {

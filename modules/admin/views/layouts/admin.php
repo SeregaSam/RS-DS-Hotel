@@ -23,7 +23,7 @@ AdminAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-        <?= Html::a('RS-DC Hotel', ['works/'], ['class' => 'navbar-brand col-md-3 col-lg-2 me-0 px-3']) ?>
+        <?= Html::a('RS-DC Hotel', ['default/'], ['class' => 'navbar-brand col-md-3 col-lg-2 me-0 px-3']) ?>
         
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -42,13 +42,13 @@ AdminAsset::register($this);
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <?= Html::a('<i class="fa fa-home" aria-hidden="true"></i> Номера',['works/rooms'],['class' => 'nav-link']) ?>
+                            <?= Html::a('<i class="fa fa-home" aria-hidden="true"></i> Номера',['default/rooms'],['class' => 'nav-link']) ?>
                         </li>
                         <li class="nav-item">
-                            <?= Html::a('<i class="fa fa-file" aria-hidden="true"></i> Брони',['works/books'],['class' => 'nav-link']) ?>
+                            <?= Html::a('<i class="fa fa-file" aria-hidden="true"></i> Брони',['default/books'],['class' => 'nav-link']) ?>
                         </li>
                         <li class="nav-item">
-                            <?= Html::a('<i class="fa fa-user" aria-hidden="true"></i> Клиенты',['works/books'],['class' => 'nav-link']) ?>
+                            <?= Html::a('<i class="fa fa-user" aria-hidden="true"></i> Клиенты',['default/books'],['class' => 'nav-link']) ?>
                         </li>
                     </ul>
                 </div>

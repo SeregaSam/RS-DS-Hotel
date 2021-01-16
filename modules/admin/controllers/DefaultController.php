@@ -14,7 +14,7 @@ use yii\data\Pagination;
 /**
  * Default controller for the `admin` module
  */
-class WorksController extends Controller
+class DefaultController extends Controller
 {
      
     public function actionIndex()
@@ -31,7 +31,7 @@ class WorksController extends Controller
             'totalCount' => $rooms->count(),
         ]);
 
-        $rooms = Room::find()->select(['roomNumber','title','price','itsFree'])->joinWith('category')->offset( $paginationRooms->offset )->limit( $paginationRooms->limit )->asArray()->all();
+        $rooms = Room::find()->select(['roomNumber','title','price','itsFree'])->joinWith('category')->offset( $paginationRooms->offset )->limit( $paginationRooms->limit )->orderBy('room.id ASC')->asArray()->all();
  
         return $this->render('rooms', compact('rooms', 'paginationRooms'));
     }
@@ -39,7 +39,7 @@ class WorksController extends Controller
     public function actionBooks()
     {
         
-        $sql2 = 'SELECT book_room.IdBookRoom, client_hotel.Surname, client_hotel.Name, client_hotel.Partonymic, book_room.ArrivalDate, book_room.DepartDate, book_room.StatusCode, book_room.GroupSize From book_room LEFT JOIN client_hotel ON book_room.IdMainClient =  client_hotel.IdClient Order By book_room.IdBookRoom';
+        $sql2 = 'SELECT book_room.IdBookRoom, client.Surname, client.Name, client.Partonymic, book_room.ArrivalDate, book_room.DepartDate, book_room.StatusCode, book_room.GroupSize From book_room LEFT JOIN client ON book_room.IdMainClient =  client.IdClient Order By book_room.IdBookRoom';
         $Hotbooks = Book::findBySql($sql2)->asArray()->all();
         return $this->render('books',compact('Hotbooks'));
     }
