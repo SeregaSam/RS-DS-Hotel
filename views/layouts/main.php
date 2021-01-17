@@ -38,7 +38,7 @@ AppAsset::register($this);
 								</li>	
 								<li class="c-navigation__list-item">
 									
-									<?= Html::a('Забронировать',['site/book-room', $category['id']],['class' => 'c-navigation-link']) ?>
+									<?= Html::a('Забронировать',['site/book-room'],['class' => 'c-navigation-link']) ?>
 								</li>
 								<li class="c-navigation__list-item c-navigation__list-item_enter-btn-container">
 									
