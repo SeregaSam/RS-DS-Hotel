@@ -4,6 +4,7 @@ namespace app\modules\admin\controllers;
 
 use yii\web\Controller;
 use app\models\Room;
+use app\models\Client;
 use app\modules\admin\models\BookSearch;
 use Yii;
 use yii\web\NotFoundHttpException;
@@ -34,6 +35,26 @@ class DefaultController extends Controller
         $rooms = Room::find()->select(['roomNumber','title','price','itsFree'])->joinWith('category')->offset( $paginationRooms->offset )->limit( $paginationRooms->limit )->orderBy('room.id ASC')->asArray()->all();
  
         return $this->render('rooms', compact('rooms', 'paginationRooms'));
+    }
+
+    public function actionClients()
+    {
+        $clients = Client::find();
+
+        $paginationClients = new Pagination([
+            'defaultPageSize' => '15',
+            'totalCount' => $clients->count(),
+        ]);
+
+        $clients = Client::find()->offset( $paginationClients->offset )->limit( $paginationClients->limit )->asArray()->all();
+
+        return $this->render('clients', compact('clients', 'paginationClients'));
+    }
+
+    public function actionClientHistory($id=null) {
+        $books = Book::find()->where(['IdMainClient' => $id])->asArray()->all();
+
+        return $this->render('client-history', compact('books'));
     }
 
     public function actionBooks()
