@@ -60,7 +60,7 @@ class DefaultController extends Controller
     public function actionBooks()
     {
         
-        $sql2 = 'SELECT book_room.IdBookRoom, client.Surname, client.Name, client.Partonymic, book_room.ArrivalDate, book_room.DepartDate, book_room.StatusCode, book_room.GroupSize From book_room LEFT JOIN client ON book_room.IdMainClient =  client.IdClient Order By book_room.IdBookRoom';
+        $sql2 = 'SELECT book_room.IdBookRoom, client.Surname, client.Name, client.Patronymic, book_room.ArrivalDate, book_room.DepartDate, book_room.StatusCode, book_room.GroupSize From book_room LEFT JOIN client ON book_room.IdMainClient =  client.IdClient Order By book_room.IdBookRoom';
         $Hotbooks = Book::findBySql($sql2)->asArray()->all();
         return $this->render('books',compact('Hotbooks'));
     }
