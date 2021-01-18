@@ -26,14 +26,14 @@ class DefaultController extends Controller
     public function actionRooms()
     {
         $rooms = Room::find();
-
+        
         $paginationRooms = new Pagination([
             'defaultPageSize' => '15',
             'totalCount' => $rooms->count(),
         ]);
-
-        $rooms = Room::find()->select(['roomNumber','title','price','itsFree'])->joinWith('category')->offset( $paginationRooms->offset )->limit( $paginationRooms->limit )->orderBy('room.id ASC')->asArray()->all();
- 
+        
+        $rooms = Room::find()->select(['roomNumber','title','price','itsFree'])->join('LEFT JOIN','category','category.id=room.idCategory')->offset( $paginationRooms->offset )->limit( $paginationRooms->limit )->orderBy('room.id ASC')->asArray()->all();
+        
         return $this->render('rooms', compact('rooms', 'paginationRooms'));
     }
 
@@ -64,7 +64,7 @@ class DefaultController extends Controller
         $Hotbooks = Book::findBySql($sql2)->asArray()->all();
         return $this->render('books',compact('Hotbooks'));
     }
-    public function actionBook()
+    public function actionBooktable()
     {
         $searchModel = new BookSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
