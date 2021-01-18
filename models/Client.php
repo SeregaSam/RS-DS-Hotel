@@ -12,8 +12,8 @@ class Client extends ActiveRecord
     public function rules()
     {
         return [
-            [['Name','Surname','Partonymic'], 'required'],   
-            [['Name','Surname','Partonymic'], 'string', 'max' => 32],
+            [['Name','Surname','Patronymic'], 'required'],   
+            [['Name','Surname','Patronymic'], 'string', 'max' => 32],
             
             
         ];
