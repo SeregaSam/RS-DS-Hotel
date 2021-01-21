@@ -19,19 +19,19 @@ $this->title = 'RS-DC Hotel';
 							<div class="l-products-row__col">
 								<div class="c-number-cart">
 									<figure class="c-number-cart__img-wrapper">
-										<?= Html::img('@web/img/'.Html::encode($category['imgAlias']).'.jpg', ['class' => 'c-number-cart__img'])?>	
+										<?= Html::img('@web/img/'.Html::encode($category['imgAlias']).'.jpg', ['class' => 'c-number-cart__img']) ?>	
 									</figure>
 
 									<div class="c-number-cart__content">
 										<h3 class="c-number-cart__caption">
-											<a href="" class="c-number-cart__caption-link">Номер <?=Html::encode($category['title'])?></a>
+											<a href="" class="c-number-cart__caption-link">Номер <?= Html::encode($category['title']) ?></a>
 										</h3>
 
 										<div class="c-number-cart__price-status">
-											<span class="c-number-cart__price-value">&#8381;<?=Html::encode($category['price'])?> за ночь</span>
+											<span class="c-number-cart__price-value">&#8381;<?= Html::encode($category['price']) ?> за ночь</span>
 										</div>
 
-										<p class="c-number-cart__description"><?=Html::encode($category['description'])?></p>
+										<p class="c-number-cart__description"><?= Html::encode($category['description']) ?></p>
 
 										<div class="c-number-cart__btn-wrapper">
 											<?= Html::a('Забронировать', ['site/book-room', 'id' => $category['id']], ['class' => 'btn']) ?>
@@ -40,13 +40,13 @@ $this->title = 'RS-DC Hotel';
 
 								<p class="c-number-cart__footer">
 									<span class="c-number-cart__specification">
-										<strong class="c-number-cart__specification-value"><?=Html::encode($category['square'])?></strong> м2
+										<strong class="c-number-cart__specification-value"><?= Html::encode($category['square']) ?></strong> м2
 									</span>
 									<span class="c-number-cart__specification">
-										<strong class="c-number-cart__specification-value"><?=Html::encode($category['beds'])?></strong> кровати
+										<strong class="c-number-cart__specification-value"><?= Html::encode($category['beds']) ?></strong> кровати
 									</span>
 									<span class="c-number-cart__specification">
-										<strong class="c-number-cart__specification-value"><?=Html::encode($category['baths'])?></strong> ванны
+										<strong class="c-number-cart__specification-value"><?= Html::encode($category['baths']) ?></strong> ванны
 									</span>
 								</p>
 								</div>
