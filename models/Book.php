@@ -6,42 +6,27 @@ use app\models\Client;
 
 class Book extends ActiveRecord
 {
-       public static function tableName() {// если отличается название таблицы
-            return 'book_room' ;
+       public static function tableName() {
+            return 'book_room';
          }
+
          public function getClient()
          {
-             return $this->hasOne(Client::className(), ['IdClient' => 'IdMainClient']);
+             return $this->hasOne(Client::className(), ['idClient' => 'idMainClient']);
          }
+
          public function rules()
          {
              return [
-                 [['ArrivalDate','DepartDate','StatusCode'], 'required'],
-                 ['ArrivalDate', 'date', 'format' => 'php:Y-m-d'],
-                 ['DepartDate', 'date', 'format' => 'php:Y-m-d'],
-                 [['StatusCode'], 'string', 'max' => 32],
-                 [['IdMainClient'], 'integer'],
-                 [['Room'], 'integer'],
-                 [['GroupSize'], 'integer'],
-                 [['DepartDate'], 'date', 'format' => 'php:Y-m-d'],
+                 [['arrivalDate','departDate','statusCode'], 'required'],
+                 ['arrivalDate', 'date', 'format' => 'php:Y-m-d'],
+                 ['departDate', 'date', 'format' => 'php:Y-m-d'],
+                 [['statusCode'], 'string', 'max' => 32],
+                 [['idClient'], 'integer'],
+                 [['foodType'], 'integer'],
+                 [['groupSize'], 'integer'],
+                 [['departDate'], 'date', 'format' => 'php:Y-m-d'],
                  
              ];
-         }
-         
-         /**
-          * {@inheritdoc}
-          */
-         public function attributeLabels()
-         {
-             return [
-                 'IdBookRoom' => 'ID',
-                 'ArrivalDate' => 'Прибывает',
-                 'DepartDate' => 'Уезжает',
-                 'StatusCode' => 'Статус',
-                 'IdMainClient' => 'IdClient',
-                 'Room' => 'Взрослых',// тип комнаты
-                 'GroupSize' => 'Размер группы',// тип комнаты
-                 'DateCreate' => 'Создан',
-             ];
-         }
+         }         
 }

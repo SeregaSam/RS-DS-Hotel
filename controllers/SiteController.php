@@ -4,13 +4,13 @@ namespace app\controllers;
 
 use Yii;
 use yii\filters\AccessControl;
-
 use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\BookRoomForm;
 use app\models\Category;
+use app\models\Client;
+use app\models\Room;
 use app\models\LoginForm;
-use app\models\ContactForm;
 use app\models\EntryForm;
 use app\models\ComplaintForm;
 use yii\web\Controller;
@@ -73,12 +73,27 @@ class SiteController extends Controller
     }
 
     public function actionBookRoom($id=null) 
-    {  
-        $bookRoomForm = new BookRoomForm;
-        
-        is_null($id) ? $bookRoomForm->roomCategoryId = 1 : $bookRoomForm->roomCategoryId = $id;
-        
-        return $this->render('book-room', ['bookRoomForm' => $bookRoomForm]);
+    { 
+        $bookRoomForm = new BookRoomForm();
+        $client = new Client();
+
+        is_null($id) ? $bookRoomForm->idCategory = 1 : $bookRoomForm->idCategory = $id;
+
+        $bookRoomForm->idClient = 3;
+        $bookRoomForm->statusCode = 'processing';
+        $bookRoomForm->findRoom();
+
+        if($client->load(Yii::$app->request->post()) && $bookRoomForm->load(Yii::$app->request->post())) {
+            $bookRoomForm->changeRoomStatus();
+            $bookRoomForm->countCost();
+            $bookRoomForm->save(false);
+            $client->save(false);
+        }
+
+        return $this->render('book-room', [
+            'bookRoomForm' => $bookRoomForm,
+            'client' => $client,
+        ]);
     } 
 
     /**

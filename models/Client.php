@@ -9,13 +9,24 @@ class Client extends ActiveRecord
     {
         //return $this->hasOne(room::className(), ['id' => 'IdBookRoom']);
     }
+
     public function rules()
     {
         return [
-            [['Name','Surname','Patronymic'], 'required'],   
-            [['Name','Surname','Patronymic'], 'string', 'max' => 32],
-            
-            
+            [['name','surname','patronymic','email'], 'required'],   
+            [['name','surname','patronymic'], 'string', 'max' => 32],  
         ];
+    }
+
+    public function attributeLabels() {
+        return [
+            'name' => 'имя',
+            'surname' => 'фамилия',
+            'patronymic' => 'отчество'
+        ];
+    }
+
+    public function findLastId() {
+        return Client::find()->max('id');
     }
 }

@@ -45,7 +45,7 @@ AdminAsset::register($this);
                             <?= Html::a('<i class="fa fa-home" aria-hidden="true"></i> Номера',['default/rooms'],['class' => 'nav-link']) ?>
                         </li>
                         <li class="nav-item">
-                            <?= Html::a('<i class="fa fa-file" aria-hidden="true"></i> Брони',['default/booktable'],['class' => 'nav-link']) ?>
+                            <?= Html::a('<i class="fa fa-file" aria-hidden="true"></i> Брони',['default/books'],['class' => 'nav-link']) ?>
                         </li>
                         <li class="nav-item">
                             <?= Html::a('<i class="fa fa-user" aria-hidden="true"></i> Клиенты',['default/clients'],['class' => 'nav-link']) ?>

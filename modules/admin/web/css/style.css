@@ -63,3 +63,11 @@
   color: #fccf03;
 }
 
+.discard-book {
+  color: red;
+}
+
+.accept-book {
+  color: green;
+}
+
